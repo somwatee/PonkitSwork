@@ -1,0 +1,196 @@
+<!--Ponkit Somwatee ID 6035247014-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ponkit Register</title>
+    <script type="text/javascript">
+        function Validation() {  //Validation is a function Name it is perform on onClentClick Event
+            var errors = "";
+            errors += CheckName();
+            errors += CheckEmail();
+            errors += CheckAge();
+            errors += CheckPassword();
+            errors += CheckCnfPassword();
+            errors += CheckMobileNo();
+            if (errors != "") {
+                alert(errors);
+                return false;
+            }
+        }
+
+        //getElementById:เก็บค่าจาก client
+        // ตรวจสอบโดย exp.test(ค่าที่จะเทส)
+        function CheckName() {
+            //รับค่าจาก client
+            var name = document.getElementById('txtname');
+            var exp = /^[a-zA-Z ]+$/
+            //ถ้าไม่ได้กรอกข้อมูล
+            if(name.value=="")
+            {
+                return "กรุณากรอกชื่อ\n";
+            }
+            //กรณีถูกต้องแล้ว
+            else if (exp.test(name.value))
+            {
+                return "กรอกข้อมูลชื่อถูกต้องแล้ว\n";
+            }
+            //ถ้าข้อมูลผิดเงื่อนไข
+            else
+            {
+                return "กรุณากรอกข้อมูลให้ถูกต้อง ให้ใส่อักษร A-Z\n";
+            }
+        }
+
+        function CheckEmail() {
+           //รับค่าจาก client
+            var email = document.getElementById('txtemail');
+            var exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            //ถ้าไม่ได้กรอกข้อมูล
+            if(email.value=="")
+            {
+                return "กรุณากรอก Email\n";
+            }
+            //กรณีถูกต้องแล้ว
+            else if (exp.test(email.value))
+            {
+                return "กรอกข้อมูล Email ถูกต้องแล้ว\n";
+            }
+            //ถ้าข้อมูลผิดเงื่อนไข
+            else
+            {
+                return "กรุณากรอก Email ไม่ถูกต้อง\n";
+            }
+        }
+
+        function CheckAge() {
+            //รับค่าจาก client
+            var age = document.getElementById('txtage');
+            var exp = /^[0-9]+$/
+            //ถ้าไม่ได้กรอกข้อมูล
+            if(age.value=="")
+            {
+                return "กรุณากรอกอายุ\n";
+            }
+            //กรณีถูกต้องแล้ว
+            else if (exp.test(age.value) && age.value>=60)
+            {
+                return "กรอกข้อมูลอายุถูกต้องแล้ว\n";
+            }
+            //ถ้าข้อมูลผิดเงื่อนไข
+            else
+            {
+                return "กรุณากรองตัวเลข 0-60 และต้องมีอายุตั้งแต่ 60 ปีขึ้นไป\n";
+            }
+        }
+
+        function CheckPassword() {
+            //รับค่าจาก client
+            var password = document.getElementById('txtpassword');
+            var exp = /^(?=.*[A-Z])(?=.*[\W])(?=.*[0-9])(?=.*[a-z]).{8,128}$/
+            //ถ้าไม่ได้กรอกข้อมูล
+            if(password.value=="")
+            {
+                return "กรุณากรอก Password\n";
+            }
+            //กรณีถูกต้องแล้ว
+            else if (exp.test(password.value))
+            {
+                return "กรอกข้อมูล Password ถูกต้องแล้ว\n";
+            }
+            //ถ้าข้อมูลผิดเงื่อนไข
+            else
+            {
+                return "กรุณากรอง Password ให้มีตัว A-Z a-z 0-9 และอักขระพิเศษ 8 ตัวขึ้นไป \n";
+            }
+        }
+
+        function CheckCnfPassword() {
+            //รับค่าจาก client
+            var cnfpwd = document.getElementById('txtcnfpwd');
+            var password = document.getElementById('txtpassword');
+            //ถ้าไม่ได้กรอกข้อมูล
+            if(cnfpwd.value==password.value)
+            {
+                return "Password ถูกต้อง\n";
+            }
+            else
+            {
+                return "กรุณากรอง Password ให้ถูกต้อง\n";
+            }
+
+        }
+
+        function CheckMobileNo() {
+            //รับค่าจาก client
+            var mobile = document.getElementById('txtmobno');
+            var exp = /^[0]?[689]\d{8}$/
+            //ถ้าไม่ได้กรอกข้อมูล
+            if(mobile.value=="")
+            {
+                return "กรุณากรอกหมายเลขโทรศัพท์\n";
+            }
+            //กรณีถูกต้องแล้ว
+            else if (exp.test(mobile.value))
+            {
+                return "หมายเลขโทรศัพท์ถูกต้องแล้ว\n";
+            }
+            //ถ้าข้อมูลผิดเงื่อนไข
+            else
+            {
+                return "กรุณากรองเลขโทรศัพท์ให้ถูกต้อง\n";
+            }                       
+        }
+</script>
+</head>
+<body>
+        <div>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <Input type="text" ID="txtname" runat="server"></Input type=“text”></td>
+                    </tr>
+                    <tr>
+                        <td>Email
+                        </td>
+                        <td>
+                            <Input type="text" ID="txtemail" runat="server"></Input type=“text”></td>
+                    </tr>
+                    <tr>
+                        <td>Age
+                        </td>
+                        <td>
+                            <Input type="text" ID="txtage" runat="server"></Input type=“text”></td>
+                    </tr>
+                    <tr>
+                        <td>Password:
+                        </td>
+                        <td>
+                            <Input type="password" ID="txtpassword" runat="server"></Input type=“text”></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password
+                        </td>
+                        <td>
+                            <Input type="password" ID="txtcnfpwd" runat="server"></Input type=“text”></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No:
+                        </td>
+                        <td>
+                            <Input type="text" ID="txtmobno" runat="server"></Input type=“text”></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" ID="btnsave" onclick="return Validation()">ลงทะเบียน นะจ๊ะ</button></td>
+                    </tr>
+                </table>
+        
+            </div>
+    
+</body>
+</html>

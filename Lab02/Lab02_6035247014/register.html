@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Validation() {  //Validation is a function Name it is perform on onClentClick Event
+            var errors = "";
+            errors += CheckName();
+
+            errors += CheckEmail();
+            errors += CheckPassword();
+            errors += CheckCnfPassword();
+            errors += CheckAge();
+            errors += CheckMobileNo();
+            if (errors != "") {
+                alert(errors);
+                return false;
+            }
+        }
+
+        //getElementById:เก็บค่าจาก client
+        // ตรวจสอบโดย exp.test(ค่าที่จะเทส)
+        function CheckName() {
+            //รับค่าจาก client
+            var name = document.getElementById('txtname');
+            var exp = /^[a-zA-Z ]+$/
+            //ถ้าไม่ได้กรอกข้อมูล
+            //กรณีถูกต้องแล้ว
+            //ถ้าข้อมูลผิดเงื่อนไข
+        }
+
+        function CheckEmail() {
+           
+
+        }
+
+        function CheckAge() {
+          
+        }
+
+        function CheckPassword() {
+          
+        }
+
+        function CheckCnfPassword() {
+          
+        }
+
+        function CheckMobileNo() {
+           
+        }
+</script>
+     
+
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <Input type="text" ID="txtname" runat="server"></Input type=“text”></td>
+            </tr>
+            <tr>
+                <td>Email
+                </td>
+                <td>
+                    <Input type="text" ID="txtemail" runat="server"></Input type=“text”></td>
+            </tr>
+            <tr>
+                <td>Age
+                </td>
+                <td>
+                    <Input type="text" ID="txtage" runat="server"></Input type=“text”></td>
+            </tr>
+            <tr>
+                <td>Password:
+                </td>
+                <td>
+                    <Input type="text" ID="txtpassword" runat="server"></Input type=“text”></td>
+            </tr>
+            <tr>
+                <td>Confirm Password
+                </td>
+                <td>
+                    <Input type="text" ID="txtcnfpwd" runat="server"></Input type=“text”></td>
+            </tr>
+            <tr>
+                <td>Mobile No:
+                </td>
+                <td>
+                    <Input type="text" ID="txtmobno" runat="server"></Input type=“text”></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" ID="btnsave"></button></td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
